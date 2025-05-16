@@ -1,4 +1,4 @@
-FROM        eclipse-temurin:24-jammy
+FROM        eclipse-temurin:24.0.1_9-jre
 
 LABEL       author="AlpDerps" maintainer="admin"
 LABEL       org.opencontainers.image.source="https://github.com/alppp/pterodactyl-images/"

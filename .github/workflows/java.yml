@@ -61,4 +61,4 @@ jobs:
           platforms: linux/amd64, linux/arm64
           file: ./java/${{ matrix.tag }}/Dockerfile
           push: true
-          tags: ghcr.io/software-noob/pterodactyl-images:java_${{ matrix.tag }}
+          tags: ghcr.io/alppp/pterodactyl-images:java_${{ matrix.tag }}

@@ -1,4 +1,4 @@
-FROM        ghcr.io/graalvm/jdk-community:17
+FROM        ghcr.io/graalvm/jdk-community:20
 
 LABEL       author="Gregg" maintainer="gregg@largenut.com"
 LABEL       org.opencontainers.image.source="https://github.com/alppp/pterodactyl-images"

@@ -1,21 +1,17 @@
-FROM        ghcr.io/graalvm/jdk-community:21-ol8
+FROM        ghcr.io/graalvm/jdk-community:21
 
-LABEL       author="Softwarenoob" maintainer="admin@softwarenoob.com"
-LABEL       org.opencontainers.image.source="https://github.com/Software-Noob/pterodactyl-images"
+LABEL       author="Gregg" maintainer="gregg@largenut.com"
+LABEL       org.opencontainers.image.source="https://github.com/alppp/pterodactyl-images"
 LABEL       org.opencontainers.image.licenses="MIT"
 
-RUN         microdnf update \
-            && microdnf install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute gcc gcc-c++ freetype libstdc++ lsof glibc-locale-source glibc-langpack-en \
-            && microdnf clean all \
-            && adduser --home-dir /home/container container
-
-ENV         LC_ALL=en_US.UTF-8
-ENV         LANG=en_US.UTF-8
-ENV         LANGUAGE=en_US.UTF-8
+RUN         microdnf update -y && \
+            microdnf install -y lsof curl ca-certificates openssl git tar sqlite fontconfig freetype tzdata iproute libstdc++ && \
+            microdnf clean all && \
+            useradd -d /home/container -m container
 
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY        ./entrypoint.sh /entrypoint.sh
+COPY        entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]

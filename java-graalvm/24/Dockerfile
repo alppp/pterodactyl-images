@@ -1,6 +1,5 @@
-FROM        ghcr.io/graalvm/jdk-community:24
+FROM        container-registry.oracle.com/graalvm/jdk:24
 
-LABEL       author="Gregg" maintainer="gregg@largenut.com"
 LABEL       org.opencontainers.image.source="https://github.com/alppp/pterodactyl-images"
 LABEL       org.opencontainers.image.licenses="MIT"
 

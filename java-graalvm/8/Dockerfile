@@ -1,6 +1,5 @@
 FROM        ghcr.io/graalvm/graalvm-ce:ol8-java8-21.1.0
 
-LABEL       author="Gregg" maintainer="gregg@largenut.com"
 LABEL       org.opencontainers.image.source="https://github.com/alppp/pterodactyl-images"
 LABEL       org.opencontainers.image.licenses="MIT"
 

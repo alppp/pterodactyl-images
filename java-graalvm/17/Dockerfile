@@ -1,6 +1,5 @@
 FROM        ghcr.io/graalvm/jdk-community:17
 
-LABEL       author="Gregg" maintainer="gregg@largenut.com"
 LABEL       org.opencontainers.image.source="https://github.com/alppp/pterodactyl-images"
 LABEL       org.opencontainers.image.licenses="MIT"
 

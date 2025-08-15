@@ -4,15 +4,14 @@ LABEL       author="Gregg" maintainer="gregg@largenut.com"
 LABEL       org.opencontainers.image.source="https://github.com/alppp/pterodactyl-images"
 LABEL       org.opencontainers.image.licenses="MIT"
 
-RUN         microdnf update -y && \      ghcr.io/graalvm/graalvm-ce:ol8-java11-22.3.3
-
-LABEL       author="Gregg" maintainer="gregg@largenut.com"
-LABEL       org.opencontainers.image.source="gitlab.largenut.com"
-
-RUN         microdnf update -y && 
-            microdnf install -y lsof curl ca-certificates openssl git tar sqlite fontconfig freetype tzdata iproute libstdc++ && 
-            microdnf clean all && 
+RUN         microdnf update -y && \
+            microdnf install -y lsof curl ca-certificates openssl git tar sqlite fontconfig freetype tzdata iproute libstdc++ glibc-langpack-en && \
+            microdnf clean all && \
             useradd -d /home/container -m container
+
+ENV         LANG=en_US.UTF-8
+ENV         LC_ALL=en_US.UTF-8
+ENV         LANGUAGE=en_US:en
 
 USER        container
 ENV         USER=container HOME=/home/container
